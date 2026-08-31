@@ -36,6 +36,14 @@ Bruk kommentaren i filen som mal.
 
 Dagbokinnlegg lagres i Supabase-tabellen `diary_entries` og er tilgjengelige på tvers av nettlesere og enheter. Tilkoblingen konfigureres i `js/supabase-config.js`.
 
+Alle kan lese dagbokinnlegg. Oppretting, redigering og sletting krever innlogging med den delte Supabase Auth-kontoen `dagbok@praksisnettside.no`. Passordet lagres bare i Supabase Auth og kan endres fra Dagbok-siden etter at det nåværende passordet er bekreftet.
+
+### Aktivere Dagbok-tilgang
+
+1. Opprett brukeren `dagbok@praksisnettside.no` under **Authentication → Users** i Supabase, med automatisk e-postbekreftelse aktivert.
+2. Kjør `supabase/diary-auth-policies.sql` i Supabase SQL Editor. Dette fjerner de midlertidige offentlige skrivepolicyene.
+3. Logg inn fra `dagbok.html` med passordet du valgte da brukeren ble opprettet.
+
 ## Lokal kjøring
 
 Åpne `index.html` direkte i nettleseren, eller bruk en enkel HTTP-server:

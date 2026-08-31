@@ -36,7 +36,55 @@
     <section class="section">
       <div class="container">
 
-        <form id="diary-form" class="diary-form">
+        <section class="diary-auth" aria-labelledby="diary-access-title">
+          <div id="diary-signed-out">
+            <h2 id="diary-access-title" class="diary-auth__title">Administrer dagboken</h2>
+            <p class="diary-auth__desc">Innleggene er åpne for lesing. Skriv inn gruppepassordet for å opprette, redigere eller slette.</p>
+            <form id="diary-login-form" class="diary-auth__form">
+              <label class="diary-form__field">
+                <span>Passord</span>
+                <input id="diary-login-password" type="password" autocomplete="current-password" required />
+              </label>
+              <button type="submit" class="btn btn--primary">Lås opp</button>
+            </form>
+          </div>
+
+          <div id="diary-signed-in" hidden>
+            <div class="diary-auth__signed-in-header">
+              <div>
+                <h2 class="diary-auth__title">Dagboken er låst opp</h2>
+                <p class="diary-auth__desc">Du kan nå opprette, redigere og slette innlegg.</p>
+              </div>
+              <div class="diary-auth__actions">
+                <button id="diary-change-password-toggle" type="button" class="btn btn--secondary">Endre passord</button>
+                <button id="diary-logout-btn" type="button" class="btn btn--secondary">Lås dagboken</button>
+              </div>
+            </div>
+
+            <form id="diary-change-password-form" class="diary-auth__form diary-auth__change-form" hidden>
+              <h3>Endre gruppepassord</h3>
+              <label class="diary-form__field">
+                <span>Nåværende passord</span>
+                <input id="diary-current-password" type="password" autocomplete="current-password" required />
+              </label>
+              <label class="diary-form__field">
+                <span>Nytt passord</span>
+                <input id="diary-new-password" type="password" autocomplete="new-password" minlength="8" required />
+              </label>
+              <label class="diary-form__field">
+                <span>Gjenta nytt passord</span>
+                <input id="diary-confirm-password" type="password" autocomplete="new-password" minlength="8" required />
+              </label>
+              <div class="diary-form__actions">
+                <button type="submit" class="btn btn--primary">Lagre nytt passord</button>
+                <button id="diary-change-password-cancel" type="button" class="btn btn--secondary">Avbryt</button>
+              </div>
+            </form>
+          </div>
+          <p id="diary-auth-message" class="diary-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <form id="diary-form" class="diary-form" hidden>
           <h2 id="diary-form-title" class="diary-form__title">Nytt dagbokinnlegg</h2>
           <input id="diary-entry-id" type="hidden" />
 
