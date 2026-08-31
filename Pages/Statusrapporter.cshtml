@@ -1,0 +1,67 @@
+@page "/statusrapporter"
+@model StatusrapporterModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Statusrapporter – IS-302 Praksis";
+}
+
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"]</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo">IS-302 <span>Praksis</span></a>
+      <button class="navbar__toggle" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links">
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/statusrapporter">Statusrapporter</a></li>
+        <li><a href="/dagbok">Dagbok</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding:3.5rem 1.5rem 3rem">
+    <div class="container">
+      <p class="hero__eyebrow">IS-302 · Fremdrift</p>
+      <h1 class="hero__title">Statusrapporter</h1>
+      <p class="hero__subtitle">
+        Statusoppdateringer om prosjektfremdriften gjennom semesteret.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="card report-card">
+        <div class="report-card__date">📅 18. september 2026 – Rapport #1</div>
+        <span class="badge badge--blue">Kommende</span>
+        <h3 class="report-card__title">Tema</h3>
+        <div class="report-card__body">
+          <p>
+            Her kommer første statusrapport.
+          </p>
+          <p style="margin-top:.75rem"><strong>Neste steg:</strong> Kommer.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>IS-302 Praksisnettside &mdash; Kristiansand kommune &mdash; 2026</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

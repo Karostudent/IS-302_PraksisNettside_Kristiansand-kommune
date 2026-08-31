@@ -1,0 +1,146 @@
+@page "/dagbok"
+@model DagbokModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Dagbok – IS-302 Praksis";
+}
+
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"]</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo">IS-302 <span>Praksis</span></a>
+      <button class="navbar__toggle" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links">
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/statusrapporter">Statusrapporter</a></li>
+        <li><a href="/dagbok">Dagbok</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="diary-content" class="diary-content">
+
+    <header class="hero" style="padding:3rem 1.5rem 2.5rem">
+      <div class="container">
+        <p class="hero__eyebrow">Praksisdagbok</p>
+        <h1 class="hero__title">Dagbok 📓</h1>
+        <p class="hero__subtitle">Skriv, rediger og ta vare på refleksjoner fra praksisperioden.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+
+        <section class="diary-auth" aria-labelledby="diary-access-title">
+          <div id="diary-signed-out">
+            <h2 id="diary-access-title" class="diary-auth__title">Administrer dagboken</h2>
+            <p class="diary-auth__desc">Innleggene er åpne for lesing. Skriv inn gruppepassordet for å opprette, redigere eller slette.</p>
+            <form id="diary-login-form" class="diary-auth__form">
+              <label class="diary-form__field">
+                <span>Passord</span>
+                <input id="diary-login-password" type="password" autocomplete="current-password" required />
+              </label>
+              <button type="submit" class="btn btn--primary">Lås opp</button>
+            </form>
+          </div>
+
+          <div id="diary-signed-in" hidden>
+            <div class="diary-auth__signed-in-header">
+              <div>
+                <h2 class="diary-auth__title">Dagboken er låst opp</h2>
+                <p class="diary-auth__desc">Du kan nå opprette, redigere og slette innlegg.</p>
+              </div>
+              <div class="diary-auth__actions">
+                <button id="diary-change-password-toggle" type="button" class="btn btn--secondary">Endre passord</button>
+                <button id="diary-logout-btn" type="button" class="btn btn--secondary">Lås dagboken</button>
+              </div>
+            </div>
+
+            <form id="diary-change-password-form" class="diary-auth__form diary-auth__change-form" hidden>
+              <h3>Endre gruppepassord</h3>
+              <label class="diary-form__field">
+                <span>Nåværende passord</span>
+                <input id="diary-current-password" type="password" autocomplete="current-password" required />
+              </label>
+              <label class="diary-form__field">
+                <span>Nytt passord</span>
+                <input id="diary-new-password" type="password" autocomplete="new-password" minlength="8" required />
+              </label>
+              <label class="diary-form__field">
+                <span>Gjenta nytt passord</span>
+                <input id="diary-confirm-password" type="password" autocomplete="new-password" minlength="8" required />
+              </label>
+              <div class="diary-form__actions">
+                <button type="submit" class="btn btn--primary">Lagre nytt passord</button>
+                <button id="diary-change-password-cancel" type="button" class="btn btn--secondary">Avbryt</button>
+              </div>
+            </form>
+          </div>
+          <p id="diary-auth-message" class="diary-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <form id="diary-form" class="diary-form" hidden>
+          <h2 id="diary-form-title" class="diary-form__title">Nytt dagbokinnlegg</h2>
+          <input id="diary-entry-id" type="hidden" />
+
+          <div class="diary-form__row">
+            <label class="diary-form__field">
+              <span>Dato</span>
+              <input id="diary-date" type="date" required />
+            </label>
+            <label class="diary-form__field diary-form__field--emoji">
+              <span>Symbol</span>
+              <input id="diary-emoji" type="text" value="📝" maxlength="4" aria-label="Symbol for innlegget" />
+            </label>
+          </div>
+
+          <label class="diary-form__field">
+            <span>Tittel</span>
+            <input id="diary-title" type="text" maxlength="120" placeholder="Hva handler dagen om?" required />
+          </label>
+
+          <label class="diary-form__field">
+            <span>Innlegg</span>
+            <textarea id="diary-body" rows="7" maxlength="5000" placeholder="Skriv refleksjonene deres her …" required></textarea>
+          </label>
+
+          <div class="diary-form__actions">
+            <button id="diary-save-btn" type="submit" class="btn btn--primary">Lagre innlegg</button>
+            <button id="diary-cancel-btn" type="button" class="btn btn--secondary" hidden>Avbryt redigering</button>
+          </div>
+          <p id="diary-message" class="diary-message" role="status" aria-live="polite"></p>
+          <p class="diary-storage-note">Innleggene lagres i Supabase og er tilgjengelige på tvers av enheter.</p>
+        </form>
+
+        <section class="diary-list-section" aria-labelledby="diary-list-title">
+          <h2 id="diary-list-title" class="diary-list-section__title">Tidligere innlegg</h2>
+          <div id="diary-list" class="diary-list"></div>
+          <p id="diary-empty" class="diary-empty">Ingen innlegg ennå. Skriv det første innlegget ovenfor.</p>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>IS-302 Praksisnettside &mdash; Kristiansand kommune &mdash; 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@@supabase/supabase-js@2"></script>
+  <script src="/js/supabase-config.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

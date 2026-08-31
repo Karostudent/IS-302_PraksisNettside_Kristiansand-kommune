@@ -1,10 +1,135 @@
-﻿@page
+﻿@page "/"
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    Layout = null;
+    ViewData["Title"] = "IS-302 – Praksisnettside | Kristiansand kommune";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"]</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo">IS-302 <span>Praksisnettside</span></a>
+      <button class="navbar__toggle" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links">
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/statusrapporter">Statusrapporter</a></li>
+        <li><a href="/dagbok">Dagbok</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <p class="hero__eyebrow">IS-302 · Kristiansand kommune · Samfunnsmedisinsk enhet</p>
+      <h1 class="hero__title">Gruppe-nettside for praksis IS-302</h1>
+      <p class="hero__subtitle">
+        Vi er et studentteam som jobber med et digitaliseringsprosjekt for
+        Kristiansand kommune. Her presenterer vi oss, prosjektet og fremgangen.
+      </p>
+      <div class="hero__cta">
+        <a href="/prosjekt" class="btn btn--primary">Les om prosjektet</a>
+        <a href="/statusrapporter" class="btn btn--outline">Statusrapporter</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Gruppen</span>
+        <h2 class="section__title">Hvem er vi?</h2>
+        <p class="section__desc">
+          Vi er to studenter fra Universitetet i Agder som tar kurset IS-302
+          og gjennomfører praksisopphold i Kristiansand kommune som en del av bachelor i IT og informasjonssystemer.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card member-card">
+          <div class="member-card__avatar">KA</div>
+          <h3 class="member-card__name">Karoline Aas-Mehren</h3>
+          <p class="member-card__role">Prosjektleder / Utvikler</p>
+          <p class="member-card__bio">
+            Ansvarlig for utvikling, kommunikasjon med oppdragsgiver og fremdriftsrapportering.
+          </p>
+        </div>
+
+        <div class="card member-card">
+          <div class="member-card__avatar">JG</div>
+          <h3 class="member-card__name">Jabir Gutale</h3>
+          <p class="member-card__role">Utvikler / Analytiker</p>
+          <p class="member-card__bio">
+            Fokuserer på teknisk analyse og implementering. Interessert i
+            UX og systemarkitektur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Prosjektet</span>
+        <h2 class="section__title">Hva jobber vi med?</h2>
+        <p class="section__desc">
+          En kort oppsummering av oppdraget fra Kristiansand kommune.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">🎯 Målsetting</h3>
+          <p style="color:var(--color-text-muted);font-size:.95rem">
+            Kartlegge og foreslå forbedringer i en arbeidsprosess som i dag er preget av mye manuell håndtering.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">🏛️ Oppdragsgiver</h3>
+          <p style="color:var(--color-text-muted);font-size:.95rem">
+            Kristiansand kommune, Samfunnsmedisinsk enhet.
+            Veileder i kommunen følger oss opp gjennom hele praksisperioden.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">🗓️ Periode</h3>
+          <p style="color:var(--color-text-muted);font-size:.95rem">
+            Praksisperioden varer fra <strong>august til desember 2026</strong>.
+            Vi møter oppdragsgiver hver uke og leverer statusrapporter
+            underveis.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">📦 Leveranser</h3>
+          <p style="color:var(--color-text-muted);font-size:.95rem">
+            Prosessanalyse, programmering og dokumentasjon.
+            Underveis vil vi føre prosjektdagbok og dokumentere fremdriften gjennom statusoppdateringer.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:2rem">
+        <a href="/prosjekt" class="btn btn--primary">Mer om prosjektet →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>IS-302 Praksisnettside &mdash; Kristiansand kommune &mdash; 2026</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
