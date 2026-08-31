@@ -23,100 +23,69 @@
     </div>
   </nav>
 
-  <!-- Password gate -->
-  <div id="diary-gate" class="gate">
-    <div class="gate__box">
-      <div class="gate__icon">🔒</div>
-      <h2 class="gate__title">Dagbok</h2>
-      <p class="gate__desc">
-        Dagboken er kun tilgjengelig for gruppemedlemmene.
-        Skriv inn passordet for å få tilgang.
-      </p>
-      <form id="diary-gate-form" class="gate__form">
-        <input
-          id="diary-password"
-          class="gate__input"
-          type="password"
-          placeholder="Passord"
-          autocomplete="current-password"
-          required
-        />
-        <p id="diary-error" class="gate__error">Feil passord. Prøv igjen.</p>
-        <button type="submit" class="btn btn--primary" style="border-color:transparent">Lås opp 🔓</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Diary content (hidden until unlocked) -->
-  <div id="diary-content" class="diary-content">
+  <main id="diary-content" class="diary-content">
 
     <header class="hero" style="padding:3rem 1.5rem 2.5rem">
       <div class="container">
-        <p class="hero__eyebrow">Kun for gruppemedlemmer</p>
+        <p class="hero__eyebrow">Praksisdagbok</p>
         <h1 class="hero__title">Dagbok 📓</h1>
-        <p class="hero__subtitle">Interne refleksjoner og notater fra praksisperioden.</p>
+        <p class="hero__subtitle">Skriv, rediger og ta vare på refleksjoner fra praksisperioden.</p>
       </div>
     </header>
 
     <section class="section">
       <div class="container">
 
-        <div class="lock-btn">
-          <button id="diary-lock-btn" class="btn btn--outline" style="background:var(--color-primary);color:#fff;border-color:transparent">
-            🔒 Lås dagboken
-          </button>
-        </div>
+        <form id="diary-form" class="diary-form">
+          <h2 id="diary-form-title" class="diary-form__title">Nytt dagbokinnlegg</h2>
+          <input id="diary-entry-id" type="hidden" />
 
-        <!-- Add new entries at the top, newest first -->
-
-        <div class="diary-entry">
-          <div class="diary-entry__header">
-            <span class="diary-entry__emoji">✍️</span>
-            <span class="diary-entry__date">18. september 2024</span>
+          <div class="diary-form__row">
+            <label class="diary-form__field">
+              <span>Dato</span>
+              <input id="diary-date" type="date" required />
+            </label>
+            <label class="diary-form__field diary-form__field--emoji">
+              <span>Symbol</span>
+              <input id="diary-emoji" type="text" value="📝" maxlength="4" aria-label="Symbol for innlegget" />
+            </label>
           </div>
-          <h3 class="diary-entry__title">Første intervjurunde – tanker og refleksjoner</h3>
-          <p class="diary-entry__body">
-            I dag hadde vi de to første intervjuene. Det gikk overraskende bra! Den ene informanten var
-            veldig åpen og delte mye nyttig om frustrasjonene med nåværende system. Vi merket at det er
-            stor forskjell på hvordan ansatte opplever samme prosess – noe vi må ta hensyn til i analysen.
-            Vi ble litt sene ut, men gruppa fungerer godt sammen.
-          </p>
-        </div>
 
-        <div class="diary-entry">
-          <div class="diary-entry__header">
-            <span class="diary-entry__emoji">🚀</span>
-            <span class="diary-entry__date">4. september 2024</span>
-          </div>
-          <h3 class="diary-entry__title">Oppstart – spent og motivert</h3>
-          <p class="diary-entry__body">
-            Første dag i kommunen. Vi ble tatt godt imot av veilederen vår som ga oss en omvisning og
-            forklarte oppdraget i detalj. Oppdraget virker spennende, men også litt overveldende – omfanget
-            er stort. Vi brukte ettermiddagen på å skrive ned inntrykk og begynne på prosjektplanen.
-            Gøy å endelig komme i gang!
-          </p>
-        </div>
+          <label class="diary-form__field">
+            <span>Tittel</span>
+            <input id="diary-title" type="text" maxlength="120" placeholder="Hva handler dagen om?" required />
+          </label>
 
-        <!-- Template for new entries:
-        <div class="diary-entry">
-          <div class="diary-entry__header">
-            <span class="diary-entry__emoji">📝</span>
-            <span class="diary-entry__date">DD. Måned ÅÅÅÅ</span>
+          <label class="diary-form__field">
+            <span>Innlegg</span>
+            <textarea id="diary-body" rows="7" maxlength="5000" placeholder="Skriv refleksjonene deres her …" required></textarea>
+          </label>
+
+          <div class="diary-form__actions">
+            <button id="diary-save-btn" type="submit" class="btn btn--primary">Lagre innlegg</button>
+            <button id="diary-cancel-btn" type="button" class="btn btn--secondary" hidden>Avbryt redigering</button>
           </div>
-          <h3 class="diary-entry__title">Tittel</h3>
-          <p class="diary-entry__body">Innhold her.</p>
-        </div>
-        -->
+          <p id="diary-message" class="diary-message" role="status" aria-live="polite"></p>
+          <p class="diary-storage-note">Innleggene lagres i Supabase og er tilgjengelige på tvers av enheter.</p>
+        </form>
+
+        <section class="diary-list-section" aria-labelledby="diary-list-title">
+          <h2 id="diary-list-title" class="diary-list-section__title">Tidligere innlegg</h2>
+          <div id="diary-list" class="diary-list"></div>
+          <p id="diary-empty" class="diary-empty">Ingen innlegg ennå. Skriv det første innlegget ovenfor.</p>
+        </section>
 
       </div>
     </section>
 
-  </div><!-- /diary-content -->
+  </main>
 
   <footer class="footer">
     <p>IS-302 Praksisnettside &mdash; Kristiansand kommune &mdash; 2024</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
