@@ -52,4 +52,4 @@ jobs:
           app-name: 'Praksis-i-Kristiansand-kommune'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FD54CFAAB7174A0397A34C74573F5E53 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8D368868CBA8477E846C52CEE5D49EF1 }}
