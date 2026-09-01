@@ -17,17 +17,25 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseStaticFiles(new StaticFileOptions
+var cssPath = Path.Combine(builder.Environment.ContentRootPath, "css");
+if (Directory.Exists(cssPath))
 {
-    FileProvider = new PhysicalFileProvider(Path.Combine(builder.Environment.ContentRootPath, "css")),
-    RequestPath = "/css"
-});
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(cssPath),
+        RequestPath = "/css"
+    });
+}
 
-app.UseStaticFiles(new StaticFileOptions
+var jsPath = Path.Combine(builder.Environment.ContentRootPath, "js");
+if (Directory.Exists(jsPath))
 {
-    FileProvider = new PhysicalFileProvider(Path.Combine(builder.Environment.ContentRootPath, "js")),
-    RequestPath = "/js"
-});
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(jsPath),
+        RequestPath = "/js"
+    });
+}
 
 app.UseRouting();
 
