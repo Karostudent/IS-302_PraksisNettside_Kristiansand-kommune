@@ -1,26 +1,56 @@
 ﻿@page
 @model ErrorModel
 @{
-    ViewData["Title"] = "Error";
+    Layout = null;
+    ViewData["Title"] = "Feil – IS-302 Praksis";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"]</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__logo">
+        <a href="https://www.kristiansand.kommune.no" target="_blank" rel="noopener" title="Gå til Kristiansand kommune sin nettside">
+          <img src="/images/L_KRS_Forenklet_byvaapen.png" alt="Kristiansand kommune, forenklet digital logo" />
+        </a>
+        <a href="/" title="IS-302 Praksis Hjem">
+          <span>IS-302 Praksis</span>
+        </a>
+      </div>
+      <ul class="navbar__links">
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/statusrapporter">Statusrapporter</a></li>
+        <li><a href="/dagbok">Dagbok</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to the <strong>Development</strong> environment displays detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
+  <main class="container" style="padding: 4rem 1.5rem;">
+    <div class="card">
+      <h1 class="section__title" style="color: #c53030;">Det oppstod en feil</h1>
+      <p class="section__desc">Beklager, en feil oppstod under behandling av forespørselen.</p>
+
+      @if (Model.ShowRequestId)
+      {
+        <p style="margin-top: 1rem;">
+          <strong>Forespørsel-ID:</strong> <code>@Model.RequestId</code>
+        </p>
+      }
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>IS-302 Praksisnettside &mdash; Kristiansand kommune &mdash; 2026</p>
+  </footer>
+
+</body>
+</html>
