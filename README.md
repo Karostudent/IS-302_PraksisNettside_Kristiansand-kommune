@@ -1,15 +1,16 @@
 # IS-302 – Praksisnettside for Kristiansand kommune
 
-En enkel, stilig nettside for studentgruppen i IS-302 ved Universitetet i Agder.
+En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA). Studentene Karoline og Jabir gjennomfører praksis i Kristiansand kommune, Samfunnsmedisinsk enhet, der de jobber med effektivisering og digitalisering av saksbehandlingsprosessen for **ALIS-tilskudd (Allmennleger i spesialisering)** gjennom utvikling av en ny tilskuddsportal.
 
 ## Sider
 
 | Side | Rute | Fil | Beskrivelse |
 |------|------|-----|-------------|
-| Hjem | `/` | `Pages/Index.cshtml` | Gruppepresentasjon og prosjektsammendrag |
-| Prosjektet | `/prosjekt` | `Pages/Prosjekt.cshtml` | Detaljert prosjektbeskrivelse og tidslinje |
-| Statusrapporter | `/statusrapporter` | `Pages/Statusrapporter.cshtml` | Løpende fremdriftsoppdateringer |
-| Dagbok | `/dagbok` | `Pages/Dagbok.cshtml` | Praksisdagbok med refleksjoner og notater |
+| Hjem | `/` | `Pages/Index.cshtml` | Gruppepresentasjon, prosjektsammendrag og hurtigkoblinger |
+| Prosjektet | `/prosjekt` | `Pages/Prosjekt.cshtml` | Detaljert prosjektbeskrivelse for ALIS-portalen, metode og tidslinje |
+| Gruppen | `/gruppen` | `Pages/Gruppen.cshtml` | Utvidede studentprofiler for Karoline og Jabir |
+| Statusrapporter | `/statusrapporter` | `Pages/Statusrapporter.cshtml` | Løpende fremdriftsoppdateringer gjennom semesteret |
+| Dagbok | `/dagbok` | `Pages/Dagbok.cshtml` | Praksisdagbok med refleksjoner, notater og Supabase Auth |
 
 ## Struktur
 
@@ -18,6 +19,7 @@ En enkel, stilig nettside for studentgruppen i IS-302 ved Universitetet i Agder.
 ├── Pages/
 │   ├── Dagbok.cshtml
 │   ├── Error.cshtml
+│   ├── Gruppen.cshtml
 │   ├── Index.cshtml
 │   ├── Prosjekt.cshtml
 │   └── Statusrapporter.cshtml
@@ -25,6 +27,9 @@ En enkel, stilig nettside for studentgruppen i IS-302 ved Universitetet i Agder.
 │   ├── css/
 │   │   └── style.css
 │   ├── images/
+│   │   ├── Karoline.jpeg
+│   │   ├── Jabir.jpeg
+│   │   ├── radhuskvartalet.jpg
 │   │   └── L_KRS_Forenklet_byvaapen.png
 │   └── js/
 │       ├── main.js
@@ -60,11 +65,17 @@ Kjør prosjektet med .NET CLI:
 dotnet run
 ```
 
+For automatisk oppdatering i nettleseren ved lagring (Hot Reload / Live Server-opplevelse):
+
+```bash
+dotnet watch
+```
+
 Gå deretter til URL-en som vises i terminalen (f.eks. `http://localhost:5000` eller `https://localhost:7000`).
 
 ## Teknologier
 
 - ASP.NET Core Razor Pages (.NET 10)
-- HTML5 / CSS3 (med CSS-variabler)
+- HTML5 / CSS3 (med sval nordisk/vinterlig Kristiansand-fargepalett)
 - Vanilla JavaScript
 - Supabase JavaScript-klient via CDN
