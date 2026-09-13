@@ -12,10 +12,12 @@
   }
 
   // Mark active link
-  const current = location.pathname.split('/').pop() || 'index.html';
+  const current = location.pathname.toLowerCase();
   document.querySelectorAll('.navbar__links a').forEach(a => {
-    const href = a.getAttribute('href').split('/').pop();
-    if (href === current) a.classList.add('active');
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if (href === current || (current === '/' && href === '/')) {
+      a.classList.add('active');
+    }
   });
 })();
 

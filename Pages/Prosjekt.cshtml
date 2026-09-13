@@ -17,20 +17,28 @@
 
   <nav class="navbar">
     <div class="navbar__inner">
-      <a href="/" class="navbar__logo">IS-302 <span>Praksis</span></a>
+      <div class="navbar__logo">
+        <a href="https://www.kristiansand.kommune.no" target="_blank" rel="noopener" title="Gå til Kristiansand kommune sin nettside">
+          <img src="/images/L_KRS_Forenklet_byvaapen.png" alt="Kristiansand kommune, forenklet digital logo" />
+        </a>
+        <a href="/" title="IS-302 Praksis Hjem">
+          <span>IS-302 Praksis</span>
+        </a>
+      </div>
       <button class="navbar__toggle" aria-label="Meny">
         <span></span><span></span><span></span>
       </button>
       <ul class="navbar__links">
         <li><a href="/">Hjem</a></li>
         <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/gruppen">Gruppen</a></li>
         <li><a href="/statusrapporter">Statusrapporter</a></li>
         <li><a href="/dagbok">Dagbok</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero" style="padding:3.5rem 1.5rem 3rem">
+  <header class="hero-simple">
     <div class="container">
       <p class="hero__eyebrow">IS-302 · Praksisprosjekt</p>
       <h1 class="hero__title">Prosjektet</h1>
@@ -46,61 +54,60 @@
       <div class="two-col">
         <div class="info-box">
           <div class="info-box__label">Oppdragsgiver</div>
-          <div class="info-box__value">Kristiansand kommune</div>
-        </div>
-        <div class="info-box">
-          <div class="info-box__label">Avdeling</div>
-          <div class="info-box__value">Samfunnsmedisinsk enhet</div>
+          <div class="info-box__value">Kristiansand kommune, Samfunnsmedisinsk enhet</div>
         </div>
         <div class="info-box">
           <div class="info-box__label">Prosjektperiode</div>
           <div class="info-box__value">August – Desember 2026</div>
         </div>
-        <div class="info-box">
-          <div class="info-box__label">Kurs</div>
-          <div class="info-box__value">IS-302, Universitetet i Agder</div>
-        </div>
+        
       </div>
 
       <div class="prose">
-        <h2>Bakgrunn</h2>
+        <h2>Bakgrunn &amp; Prosjektbeskrivelse</h2>
         <p>
-          Kristiansand kommune ønsker å effektivisere og modernisere en intern
-          arbeidsprosess. Som del av praksisfaget IS-302 ved UiA har gruppen
-          fått i oppdrag å analysere nåsituasjonen, identifisere flaskehalser
-          og komme med konkrete forslag til forbedringer.
+          I praksisperioden for IS-302 ved Universitetet i Agder samarbeider vi med Samfunnsmedisinsk enhet i Kristiansand kommune. Vårt oppdrag er å effektivisere og modernisere en arbeidsprosess som i dag er preget av manuell håndtering: <strong>behandling av tilskuddssøknader for ALIS-leger (Allmennleger i spesialisering)</strong> i Kristiansand kommune.
         </p>
 
-        <h2>Mål og problemstilling</h2>
+        <h2>Vår Løsning: Tilskuddsportal for ALIS-ordningen</h2>
         <p>
-          Prosjektets overordnede mål er å gjøre en grundig analyse av den
-          valgte prosessen og presentere minst én realisérbar løsning som kan
-          tas videre av kommunen etter endt praksisperiode.
+          For å løse utfordringene med den manuelle prosessen planlegger vi å utvikle en <strong>tilskuddsportal</strong>. Målet med portalen er å gjøre hele søknads- og tildelingsprosessen smidigere, raskere og tryggere for alle involverte parter:
         </p>
         <ul>
-          <li>Kartlegge eksisterende prosess og identifisere ineffektive steg.</li>
-          <li>Intervjue relevante ansatte og brukere av systemet.</li>
-          <li>Lage en prototype av en forbedret løsning.</li>
-          <li>Dokumentere funn i statusrapporter underveis og i en oppsummerende rapport ved semesterslutt.</li>
+          <li><strong>For ALIS-legene:</strong> Enkel og oversiktlig innlevering av søknader og dokumentasjon.</li>
+          <li><strong>For veilederne:</strong> Raskere attestering og godkjenning av grunnlag.</li>
+          <li><strong>For kommunalt ansatte &amp; saksbehandlere:</strong> Bedre oversikt, redusert manuelt merarbeid, økt datakvalitet og en tryggere saksbehandling fra start til slutt.</li>
+        </ul>
+
+        <h2>Mål og deloppgaver</h2>
+        <p>
+          Prosjektets overordnede mål er å levere en grundig prosessanalyse og en funksjonell prototyp av tilskuddsportalen som kommunen kan bygge videre på.
+        </p>
+        <ul>
+          <li>Kartlegge og analysere eksisterende manuelle arbeidsprosess («As-Is»).</li>
+          <li>Gjennomføre intervjuer med saksbehandlere, veiledere og ALIS-leger for å avdekke brukerbehov.</li>
+          <li>Utforme trådmodeller (wireframes) og brukervennlig grensesnitt.</li>
+          <li>Utvikle en fungerende prototype av tilskuddsportalen («To-Be»).</li>
+          <li>Dokumentere fremdrift gjennom statusrapporter og levere en oppsummerende sluttrapport ved semesterslutt.</li>
         </ul>
 
         <h2>Metode og tilnærming</h2>
         <p>
-          Vi benytter en kombinasjon av kvalitative og kvantitative metoder:
+          Vi benytter en kombinasjon av kvalitative og tekniske metoder:
         </p>
         <ul>
-          <li><strong>Semistrukturerte intervjuer</strong> med kommuneansatte.</li>
-          <li><strong>Observasjon</strong> av arbeidsprosessen i praksis.</li>
-          <li><strong>Analyse</strong> av eksisterende rutiner og systemer.</li>
-          <li><strong>Prototyping</strong> av forbedret løsning.</li>
+          <li><strong>Semistrukturerte intervjuer &amp; brukerinnsikt</strong> med kommuneansatte og målgrupper.</li>
+          <li><strong>Prosessanalyse</strong> av eksisterende rutiner og skjemaer.</li>
+          <li><strong>Prototyping &amp; UX-design</strong> av den nye tilskuddsportalen.</li>
+          <li><strong>Smidig utvikling</strong> med hyppige avsjekker med veileder i kommunen.</li>
         </ul>
 
         <h2>Teknologier og verktøy</h2>
         <ul>
-          <li>Visual Studio Code – koding og utvikling av nettsiden</li>
-          <li>Visual Studio – utvikling og testing av prototyper</li>
-          <li>Microsoft Teams og e-post – kommunikasjon med oppdragsgiver</li>
-          <li>GitHub – versjonskontroll og dokumentdeling</li>
+          <li>Visual Studio Code / Visual Studio – koding og utvikling av prototyper</li>
+          <li>ASP.NET Core / HTML / CSS / JavaScript – teknisk plattform for nettside og prototype</li>
+          <li>GitHub – versjonskontroll og dokumentasjon</li>
+          <li>Microsoft Teams &amp; ukentlige møter i Rådhuskvartalet – kommunikasjon og oppfølging</li>
         </ul>
 
         <h2>Planlagt tidslinje</h2>
@@ -127,6 +134,142 @@
           <div class="timeline__date">Desember 2026</div>
           <div class="timeline__text">Sluttrapport, presentasjon for oppdragsgiver og innlevering.</div>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Project Inspo & Image Showcase Section -->
+  <section id="prosjekt-inspo" class="section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Bilder &amp; Visuelt</span>
+        <h2 class="section__title">Visuell oversikt over praksisarbeidet</h2>
+        <p class="section__desc">
+          Bildegalleri og inspirasjon som illustrerer de ulike fasene i vårt digitaliseringsprosjekt for Samfunnsmedisinsk enhet.
+        </p>
+      </div>
+
+     
+      <!-- Featured Main Concept Placeholder Card -->
+      <article class="inspo-featured">
+        <div class="img-placeholder">
+          <span class="img-placeholder__icon" style="font-size:3rem;">🚀</span>
+          <span class="img-placeholder__label" style="font-size:1.15rem;">Hovedkonsept &amp; Løsningsarkitektur</span>
+          <span class="img-placeholder__hint">/images/hovedkonsept-to-be.jpg</span>
+        </div>
+        <div class="inspo-featured__body">
+          <span class="inspo-card__tag">Fremhevet løsning</span>
+          <h3 class="inspo-card__title" style="font-size:1.4rem;">Digitalisert «To-Be» Arbeidsflyt</h3>
+          <p class="inspo-card__desc" style="margin-bottom:1rem;">
+            Vårt hovedmål i prosjektet er å omforme den nåværende manuelle prosessen til en helhetlig, sømløs og digital arbeidsflyt. Dette bildet/illustrasjonen viser hvordan den foreslåtte løsningen vil koble sammen brukere, skjemaer og saksbehandling.
+          </p>
+          <div>
+            <span class="badge badge--terracotta">Hovedleveranse</span>
+            <span class="badge badge--green">Samfunnsmedisinsk enhet</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 Phase Inspo Grid -->
+      <div class="inspo-grid inspo-grid--3">
+
+        <!-- Phase 1 -->
+        <article class="inspo-card">
+          <div class="img-placeholder">
+            <span class="img-placeholder__icon">📄</span>
+            <span class="img-placeholder__label">Manuell Nåsituasjon</span>
+            <span class="img-placeholder__hint">/images/nasituasjon-skjema.jpg</span>
+          </div>
+          <div class="inspo-card__body">
+            <span class="inspo-card__tag">Fase 1: Nåsituasjon</span>
+            <h3 class="inspo-card__title">Papirskjemaer &amp; Rutiner</h3>
+            <p class="inspo-card__desc">
+              Dokumentasjon av dagens arbeidshverdag med manuelle skjemaer, fysiske arkiver og tidkrevende registreringer.
+            </p>
+          </div>
+        </article>
+
+        <!-- Phase 2 -->
+        <article class="inspo-card">
+          <div class="img-placeholder">
+            <span class="img-placeholder__icon">🗺️</span>
+            <span class="img-placeholder__label">Prosesskartlegging</span>
+            <span class="img-placeholder__hint">/images/flytdiagram-asis.jpg</span>
+          </div>
+          <div class="inspo-card__body">
+            <span class="inspo-card__tag">Fase 2: Kartlegging</span>
+            <h3 class="inspo-card__title">«As-Is» Flytdiagram</h3>
+            <p class="inspo-card__desc">
+              Detaljert kartlegging av alle ledd i prosessen for å lokalisere flaskehalser, dobbeltarbeid og forsinkelser.
+            </p>
+          </div>
+        </article>
+
+        <!-- Phase 3 -->
+        <article class="inspo-card">
+          <div class="img-placeholder">
+            <span class="img-placeholder__icon">🗣️</span>
+            <span class="img-placeholder__label">Brukerinnsikt</span>
+            <span class="img-placeholder__hint">/images/intervjuer-innsikt.jpg</span>
+          </div>
+          <div class="inspo-card__body">
+            <span class="inspo-card__tag">Fase 3: Innsikt</span>
+            <h3 class="inspo-card__title">Intervjuer &amp; Behov</h3>
+            <p class="inspo-card__desc">
+              Innsikt samlet inn fra kvalitative intervjuer med saksbehandlere og helsepersonell i Kristiansand kommune.
+            </p>
+          </div>
+        </article>
+
+        <!-- Phase 4 -->
+        <article class="inspo-card">
+          <div class="img-placeholder">
+            <span class="img-placeholder__icon">🎨</span>
+            <span class="img-placeholder__label">Wireframes &amp; UX</span>
+            <span class="img-placeholder__hint">/images/wireframes-framer.jpg</span>
+          </div>
+          <div class="inspo-card__body">
+            <span class="inspo-card__tag">Fase 4: Utforming</span>
+            <h3 class="inspo-card__title">Skisser &amp; Trådmodeller</h3>
+            <p class="inspo-card__desc">
+              Tidlige skisser og Wireframes av det nye grensesnittet for å sikre en brukervennlig og universelt utformet løsning.
+            </p>
+          </div>
+        </article>
+
+        <!-- Phase 5 -->
+        <article class="inspo-card">
+          <div class="img-placeholder">
+            <span class="img-placeholder__icon">⚙️</span>
+            <span class="img-placeholder__label">Prototype &amp; Kode</span>
+            <span class="img-placeholder__hint">/images/prototype-kode.jpg</span>
+          </div>
+          <div class="inspo-card__body">
+            <span class="inspo-card__tag">Fase 5: Prototyping</span>
+            <h3 class="inspo-card__title">Interaktiv Prototype</h3>
+            <p class="inspo-card__desc">
+              Utvikling av en funksjonell prototype i kildekode som demonstrerer den nye automatisert arbeidsflyten.
+            </p>
+          </div>
+        </article>
+
+        <!-- Phase 6 -->
+        <article class="inspo-card">
+          <div class="img-placeholder">
+            <span class="img-placeholder__icon">🎯</span>
+            <span class="img-placeholder__label">Resultater &amp; Overlevering</span>
+            <span class="img-placeholder__hint">/images/sluttpresentasjon.jpg</span>
+          </div>
+          <div class="inspo-card__body">
+            <span class="inspo-card__tag">Fase 6: Overlevering</span>
+            <h3 class="inspo-card__title">Sluttrapport &amp; Demo</h3>
+            <p class="inspo-card__desc">
+              Oppsummering av anbefalinger, gevinstrealisering og overlevering av prosjektresultatene til kommunen.
+            </p>
+          </div>
+        </article>
+
       </div>
 
     </div>

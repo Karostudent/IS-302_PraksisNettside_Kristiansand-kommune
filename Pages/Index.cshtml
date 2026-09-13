@@ -15,119 +15,146 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="navbar__inner">
-      <a href="/" class="navbar__logo">IS-302 <span>Praksisnettside</span></a>
+      <div class="navbar__logo">
+        <a href="https://www.kristiansand.kommune.no" target="_blank" rel="noopener" title="Gå til Kristiansand kommune sin nettside">
+          <img src="/images/L_KRS_Forenklet_byvaapen.png" alt="Kristiansand kommune, forenklet digital logo" />
+        </a>
+        <a href="/" title="IS-302 Praksis Hjem">
+          <span>IS-302 Praksis</span>
+        </a>
+      </div>
       <button class="navbar__toggle" aria-label="Meny">
         <span></span><span></span><span></span>
       </button>
       <ul class="navbar__links">
         <li><a href="/">Hjem</a></li>
         <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/gruppen">Gruppen</a></li>
         <li><a href="/statusrapporter">Statusrapporter</a></li>
         <li><a href="/dagbok">Dagbok</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="container">
-      <p class="hero__eyebrow">IS-302 · Kristiansand kommune · Samfunnsmedisinsk enhet</p>
-      <h1 class="hero__title">Gruppe-nettside for praksis IS-302</h1>
-      <p class="hero__subtitle">
-        Vi er et studentteam som jobber med et digitaliseringsprosjekt for
-        Kristiansand kommune. Her presenterer vi oss, prosjektet og fremgangen.
-      </p>
-      <div class="hero__cta">
-        <a href="/prosjekt" class="btn btn--primary">Les om prosjektet</a>
-        <a href="/statusrapporter" class="btn btn--outline">Statusrapporter</a>
+  <!-- Hero Section with Kristiansand layout -->
+  <div class="hero-wrapper">
+    <div class="hero-grid">
+      
+      <!-- Left Hero Card (Introduction & CTAs) -->
+      <div class="hero-search-card">
+        
+        <h1 class="hero-search-card__title">Gruppe-nettside for praksis IS-302</h1>
+        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">
+          Vi er et studentteam fra UiA som gjennomfører et digitaliserings- og prosessforbedringsprosjekt for Kristiansand kommune. Følg vår fremdrift, statusrapporter og dagbok her.
+        </p>
+        
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          <a href="/prosjekt" class="btn btn--accent">Les om prosjektet</a>
+          <a href="/gruppen" class="btn btn--outline" style="color: #FFFFFF; border-color: rgba(255,255,255,0.7);">Studentteamet</a>
+          <a href="/statusrapporter" class="btn btn--outline" style="color: #FFFFFF; border-color: rgba(255,255,255,0.7);">Statusrapporter</a>
+        </div>
+
+        <div class="hero-pills">
+          <span class="hero-pills__label">Hurtigkoblinger</span>
+          <div class="hero-pills__list">
+            
+            
+            <a href="/dagbok" class="pill-tag">Dagbok</a>
+            
+            <a href="#prosjekt-info" class="pill-tag">Målsetting</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Grid (Kristiansand Color Blocks) -->
+      <div class="hero-visual-grid">
+        <div class="visual-block visual-block--accent-orange">
+          <div class="visual-block__content">
+           
+            <img src="/images/radhuskvartalet.jpg" alt="Kristiansand kommune byvåpen" style="max-height:auto; width:auto;" />
+          </div>
+        </div>
+        <div class="visual-block visual-block--image" style="background:#fff; display:flex; align-items:center; justify-content:center; padding:1rem;">
+          <img src="/images/L_KRS_Forenklet_byvaapen.png" alt="Kristiansand kommune byvåpen" style="max-height:90px; width:auto;" />
+        </div>
+        <div class="visual-block visual-block--accent-orange" style="background:var(--color-primary-dark);">
+          <div class="visual-block__content">
+            <span class="visual-block__title">Samfunnsmedisinsk enhet</span>
+          </div>
+        </div>
+        <div class="visual-block visual-block--accent-yellow">
+          <div class="visual-block__content">
+            <span class="visual-block__title">IS-302 Praksis 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Highlight Banner (Formannskapet style) -->
+    <div class="highlight-banner">
+      <div>
+        <h2 class="highlight-banner__title">
+          <a href="/prosjekt">→ Praksisoppdrag: Digitalisering i Kristiansand kommune</a>
+        </h2>
+        <p class="highlight-banner__desc">
+          Studentteamet kartlegger og foreslår forbedringer i en arbeidsprosess i Samfunnsmedisinsk enhet. Det vi ser på
+          er prosessen rundt søknad, tildeling og fordeling av tilskudd til ALIS-legene i Kristiansand kommune. Prosessen
+          er i dag preget av manuell håndtering. Ukentlige møter gjennomføres med veileder i kommunen. Vi har kontorplass 
+          i Rådhuskvartalet og deltar aktivt i møter og samarbeid med kommunens ansatte for å sikre en god gjennomføring av prosjektet.
+        </p>
+      </div>
+      <div class="highlight-banner__image" style="background:var(--color-primary-light); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
+        <img src="/images/L_KRS_Forenklet_byvaapen.png" alt="Kristiansand kommune" style="max-height:100px; width:auto;" />
       </div>
     </div>
-  </header>
+  </div>
 
-  <section class="section section--alt">
+  
+  <!-- Group Members Section -->
+  <section id="gruppen" class="section section--alt">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Gruppen</span>
+        
         <h2 class="section__title">Hvem er vi?</h2>
         <p class="section__desc">
-          Vi er to studenter fra Universitetet i Agder som tar kurset IS-302
-          og gjennomfører praksisopphold i Kristiansand kommune som en del av bachelor i IT og informasjonssystemer.
+          
         </p>
       </div>
 
       <div class="grid grid--2">
-        <div class="card member-card">
-          <div class="member-card__avatar">KA</div>
+        <a href="/gruppen" class="card member-card" title="Les mer om Karoline på Gruppen-siden">
+          <div class="member-card__avatar-wrapper">
+            <img src="/images/Karoline.jpeg" alt="Karoline Aas-Mehren" class="member-card__avatar member-card__avatar--zoom" />
+          </div>
           <h3 class="member-card__name">Karoline Aas-Mehren</h3>
           <p class="member-card__role">Prosjektleder / Utvikler</p>
           <p class="member-card__bio">
-            Ansvarlig for utvikling, kommunikasjon med oppdragsgiver og fremdriftsrapportering. Interessert i hele utviklingsprosessen fra idé til ferdig løsning. Spesielt fokus på intuitiv brukeropplevelse. </p>
+            Ansvarlig for utvikling, kommunikasjon med oppdragsgiver og fremdriftsrapportering. Interessert i hele utviklingsprosessen fra idé til ferdig løsning. Spesielt fokus på intuitiv brukeropplevelse.
           </p>
-        </div>
+        </a>
 
-        <div class="card member-card">
-          <div class="member-card__avatar">JG</div>
+        <a href="/gruppen" class="card member-card" title="Les mer om Jabir på Gruppen-siden">
+          <div class="member-card__avatar-wrapper">
+            <img src="/images/Jabir.jpeg" alt="Jabir Gutale" class="member-card__avatar" />
+          </div>
           <h3 class="member-card__name">Jabir Gutale</h3>
           <p class="member-card__role">Utvikler / Analytiker</p>
           <p class="member-card__bio">
             Fokuserer på teknisk analyse og implementering. Interessert i
-            UX og systemarkitektur.
+            UX og systemarkitektur. 
           </p>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__tag">Prosjektet</span>
-        <h2 class="section__title">Hva jobber vi med?</h2>
-        <p class="section__desc">
-          En kort oppsummering av oppdraget fra Kristiansand kommune.
-        </p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="card">
-          <h3 style="margin-bottom:.5rem">🎯 Målsetting</h3>
-          <p style="color:var(--color-text-muted);font-size:.95rem">
-            Kartlegge og foreslå forbedringer i en arbeidsprosess som i dag er preget av mye manuell håndtering.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="margin-bottom:.5rem">🏛️ Oppdragsgiver</h3>
-          <p style="color:var(--color-text-muted);font-size:.95rem">
-            Kristiansand kommune, Samfunnsmedisinsk enhet.
-            Veileder i kommunen følger oss opp gjennom hele praksisperioden.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="margin-bottom:.5rem">🗓️ Periode</h3>
-          <p style="color:var(--color-text-muted);font-size:.95rem">
-            Praksisperioden varer fra <strong>august til desember 2026</strong>.
-            Vi møter oppdragsgiver hver uke og leverer statusrapporter
-            underveis.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="margin-bottom:.5rem">📦 Leveranser</h3>
-          <p style="color:var(--color-text-muted);font-size:.95rem">
-            Prosessanalyse, programmering og dokumentasjon.
-            Underveis vil vi føre prosjektdagbok og dokumentere fremdriften gjennom statusoppdateringer.
-          </p>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:2rem">
-        <a href="/prosjekt" class="btn btn--primary">Mer om prosjektet →</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer class="footer">
-    <p>IS-302 Praksisnettside &mdash; Kristiansand kommune &mdash; 2026</p>
+    <p>IS-302 Praksisnettside &mdash; <a href="https://www.kristiansand.kommune.no" target="_blank" rel="noopener">Kristiansand kommune</a> &mdash; 2026</p>
   </footer>
 
   <script src="/js/main.js"></script>
