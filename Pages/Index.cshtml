@@ -32,6 +32,7 @@
       <ul class="navbar__links">
         <li><a href="/">Hjem</a></li>
         <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/gruppen">Gruppen</a></li>
         <li><a href="/statusrapporter">Statusrapporter</a></li>
         <li><a href="/dagbok">Dagbok</a></li>
       </ul>
@@ -52,16 +53,17 @@
         
         <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
           <a href="/prosjekt" class="btn btn--accent">Les om prosjektet</a>
+          <a href="/gruppen" class="btn btn--outline" style="color: #FFFFFF; border-color: rgba(255,255,255,0.7);">Studentteamet</a>
           <a href="/statusrapporter" class="btn btn--outline" style="color: #FFFFFF; border-color: rgba(255,255,255,0.7);">Statusrapporter</a>
         </div>
 
         <div class="hero-pills">
           <span class="hero-pills__label">Hurtigkoblinger</span>
           <div class="hero-pills__list">
-            <a href="/prosjekt" class="pill-tag">Prosjektet</a>
-            <a href="/statusrapporter" class="pill-tag">Statusrapporter</a>
+            
+            
             <a href="/dagbok" class="pill-tag">Dagbok</a>
-            <a href="#gruppen" class="pill-tag">Studentteamet</a>
+            
             <a href="#prosjekt-info" class="pill-tag">Målsetting</a>
           </div>
         </div>
@@ -71,7 +73,8 @@
       <div class="hero-visual-grid">
         <div class="visual-block visual-block--accent-orange">
           <div class="visual-block__content">
-            <span class="visual-block__title">Kristiansand kommune</span>
+           
+            <img src="/images/radhuskvartalet.jpg" alt="Kristiansand kommune byvåpen" style="max-height:auto; width:auto;" />
           </div>
         </div>
         <div class="visual-block visual-block--image" style="background:#fff; display:flex; align-items:center; justify-content:center; padding:1rem;">
@@ -111,105 +114,40 @@
   </div>
 
   
-
-  <!-- Project Inspo & Highlights Section -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section__header" style="text-align:center;">
-        <span class="section__tag">Inspirasjon &amp; Glimt</span>
-        <h2 class="section__title">Prosjektet i bilde og praksis</h2>
-        <p class="section__desc" style="margin: 0 auto;">
-          Her viser vi frem eksempler og visuelle elementer fra vårt arbeid med Kristiansand kommune.
-        </p>
-      </div>
-
-      <div class="inspo-grid inspo-grid--3">
-        <!-- Inspo Card 1 -->
-        <article class="inspo-card">
-          <div class="img-placeholder">
-            <span class="img-placeholder__icon">📊</span>
-            <span class="img-placeholder__label">Prosesskartlegging</span>
-            <span class="img-placeholder__hint">/images/prosesskart.jpg</span>
-          </div>
-          <div class="inspo-card__body">
-            <span class="inspo-card__tag">Kartlegging</span>
-            <h3 class="inspo-card__title">Arbeidsflyt og analysen</h3>
-            <p class="inspo-card__desc">
-              Visualisering av nåsituasjonen, manuelle rutiner og identifiserte flaskehalser i kommunens prosesser.
-            </p>
-          </div>
-        </article>
-
-        <!-- Inspo Card 2 -->
-        <article class="inspo-card">
-          <div class="img-placeholder">
-            <span class="img-placeholder__icon">🏢</span>
-            <span class="img-placeholder__label">Kommunehuset &amp; Miljø</span>
-            <span class="img-placeholder__hint">/images/kommunehuset.jpg</span>
-          </div>
-          <div class="inspo-card__body">
-            <span class="inspo-card__tag">Praksissted</span>
-            <h3 class="inspo-card__title">Samfunnsmedisinsk enhet</h3>
-            <p class="inspo-card__desc">
-              Oppfølging og tett samarbeid med kommuneansatte og veiledere i Kristiansand kommune.
-            </p>
-          </div>
-        </article>
-
-        <!-- Inspo Card 3 -->
-        <article class="inspo-card">
-          <div class="img-placeholder">
-            <span class="img-placeholder__icon">🎨</span>
-            <span class="img-placeholder__label">Digital Prototyping</span>
-            <span class="img-placeholder__hint">/images/prototype.jpg</span>
-          </div>
-          <div class="inspo-card__body">
-            <span class="inspo-card__tag">Løsningsforslag</span>
-            <h3 class="inspo-card__title">Skisser og wireframes</h3>
-            <p class="inspo-card__desc">
-              Konseptuelle skisser og trådmodeller av den nye og mer effektive digitale løsningen.
-            </p>
-          </div>
-        </article>
-      </div>
-
-      <div style="text-align:center; margin-top:2rem;">
-        <a href="/prosjekt#prosjekt-inspo" class="btn btn--primary">Se fullt inspirasjonsgalleri på Prosjekt-siden →</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Group Members Section -->
   <section id="gruppen" class="section section--alt">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Gruppen</span>
+        
         <h2 class="section__title">Hvem er vi?</h2>
         <p class="section__desc">
-          Vi er to studenter fra Universitetet i Agder som tar kurset IS-302
-          og gjennomfører praksisopphold i Kristiansand kommune som en del av bachelor i IT og informasjonssystemer.
+          
         </p>
       </div>
 
       <div class="grid grid--2">
-        <div class="card member-card">
-          <div class="member-card__avatar">KA</div>
+        <a href="/gruppen" class="card member-card" title="Les mer om Karoline på Gruppen-siden">
+          <div class="member-card__avatar-wrapper">
+            <img src="/images/Karoline.jpeg" alt="Karoline Aas-Mehren" class="member-card__avatar member-card__avatar--zoom" />
+          </div>
           <h3 class="member-card__name">Karoline Aas-Mehren</h3>
           <p class="member-card__role">Prosjektleder / Utvikler</p>
           <p class="member-card__bio">
             Ansvarlig for utvikling, kommunikasjon med oppdragsgiver og fremdriftsrapportering. Interessert i hele utviklingsprosessen fra idé til ferdig løsning. Spesielt fokus på intuitiv brukeropplevelse.
           </p>
-        </div>
+        </a>
 
-        <div class="card member-card">
-          <div class="member-card__avatar">JG</div>
+        <a href="/gruppen" class="card member-card" title="Les mer om Jabir på Gruppen-siden">
+          <div class="member-card__avatar-wrapper">
+            <img src="/images/Jabir.jpeg" alt="Jabir Gutale" class="member-card__avatar" />
+          </div>
           <h3 class="member-card__name">Jabir Gutale</h3>
           <p class="member-card__role">Utvikler / Analytiker</p>
           <p class="member-card__bio">
             Fokuserer på teknisk analyse og implementering. Interessert i
-            UX og systemarkitektur.
+            UX og systemarkitektur. 
           </p>
-        </div>
+        </a>
       </div>
     </div>
   </section>
