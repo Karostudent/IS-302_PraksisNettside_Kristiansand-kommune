@@ -7,7 +7,7 @@ En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA).
 | Side | Rute | Fil | Beskrivelse |
 |------|------|-----|-------------|
 | Hjem | `/` | `Pages/Index.cshtml` | Gruppepresentasjon, prosjektsammendrag og hurtigkoblinger |
-| Prosjektet | `/prosjekt` | `Pages/Prosjekt.cshtml` | Detaljert prosjektbeskrivelse for ALIS-portalen, metode og tidslinje |
+| Prosjektet | `/prosjekt` | `Pages/Prosjekt.cshtml` | Detaljert prosjektbeskrivelse for ALISflyt, metode, tidslinje og relevant prosjektmateriale |
 | Gruppen | `/gruppen` | `Pages/Gruppen.cshtml` | Utvidede studentprofiler for Karoline og Jabir |
 | Statusrapporter | `/statusrapporter` | `Pages/Statusrapporter.cshtml` | Løpende fremdriftsoppdateringer gjennom semesteret |
 | Dagbok | `/dagbok` | `Pages/Dagbok.cshtml` | Praksisdagbok med refleksjoner, notater og Supabase Auth |
@@ -27,10 +27,15 @@ En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA).
 │   ├── css/
 │   │   └── style.css
 │   ├── images/
-│   │   ├── Karoline.jpeg
+│   │   ├── AS-IS (1).png
 │   │   ├── Jabir.jpeg
+│   │   ├── Karoline.jpeg
+│   │   ├── L_KRS_Forenklet_byvaapen.png
+│   │   ├── Ny soknad-fail.png
 │   │   ├── radhuskvartalet.jpg
-│   │   └── L_KRS_Forenklet_byvaapen.png
+│   │   ├── Soknader.png
+│   │   ├── Tilskudd-excel.png
+│   │   └── TO-BE forelopigpng.png
 │   └── js/
 │       ├── main.js
 │       └── supabase-config.js
@@ -38,6 +43,8 @@ En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA).
 ├── PraksisNettside.csproj
 └── README.md
 ```
+
+Prosjektsiden bruker `TO-BE forelopigpng.png` som fremhevet illustrasjon av ALISflyt. I tillegg vises fire relevante bilder i et 2x2-galleri: dagens Excel-baserte arbeid, As-Is-kartlegging, prototypen for ny søknad og oversikten over søknader. Bilder uten ferdig prosjektmateriale er ikke tatt med som placeholders.
 
 ## Slik legger du til innhold
 
