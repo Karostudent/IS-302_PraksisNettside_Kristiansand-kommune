@@ -9,7 +9,8 @@ En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA).
 | Hjem | `/` | `Pages/Index.cshtml` | Gruppepresentasjon, prosjektsammendrag og hurtigkoblinger |
 | Prosjektet | `/prosjekt` | `Pages/Prosjekt.cshtml` | Detaljert prosjektbeskrivelse for ALISflyt, metode, tidslinje og relevant prosjektmateriale |
 | Gruppen | `/gruppen` | `Pages/Gruppen.cshtml` | Utvidede studentprofiler for Karoline og Jabir |
-| Statusrapporter | `/statusrapporter` | `Pages/Statusrapporter.cshtml` | Løpende fremdriftsoppdateringer gjennom semesteret |
+| Statusrapport 1 | `/statusrapporter` | `Pages/Statusrapporter.cshtml` | Første fremdriftsrapport |
+| Statusrapport 2 | `/statusrapporter2` | `Pages/Statusrapporter2.cshtml` | Andre fremdriftsrapport med prosjektvideo |
 | Dagbok | `/dagbok` | `Pages/Dagbok.cshtml` | Praksisdagbok med refleksjoner, notater og Supabase Auth |
 
 ## Struktur
@@ -22,7 +23,8 @@ En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA).
 │   ├── Gruppen.cshtml
 │   ├── Index.cshtml
 │   ├── Prosjekt.cshtml
-│   └── Statusrapporter.cshtml
+│   ├── Statusrapporter.cshtml
+│   └── Statusrapporter2.cshtml
 ├── wwwroot/
 │   ├── css/
 │   │   └── style.css
@@ -36,6 +38,8 @@ En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA).
 │   │   ├── Soknader.png
 │   │   ├── Tilskudd-excel.png
 │   │   └── TO-BE forelopigpng.png
+│   ├── videos/
+│   │   └── statusrapport-2.mp4
 │   └── js/
 │       ├── main.js
 │       └── supabase-config.js
@@ -50,6 +54,10 @@ Prosjektsiden bruker `TO-BE forelopigpng.png` som fremhevet illustrasjon av ALIS
 
 ### Ny statusrapport
 Åpne `Pages/Statusrapporter.cshtml` og legg til et nytt `<div class="card report-card">` øverst i containeren.
+
+### Video i statusrapport 2
+Legg videofilen med navnet `statusrapport-2.mp4` i `wwwroot/videos/`. Videoen vises automatisk i
+`Pages/Statusrapporter2.cshtml`. MP4-format med H.264-video og AAC-lyd anbefales for best støtte i nettlesere.
 
 ### Nytt dagbokinnlegg
 Gå til Dagbok-siden (`/dagbok`), fyll ut skjemaet og trykk **Lagre innlegg**. Innlegg kan også redigeres og slettes fra dagboken.

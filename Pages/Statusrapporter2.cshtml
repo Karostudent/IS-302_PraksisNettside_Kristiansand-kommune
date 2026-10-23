@@ -1,0 +1,131 @@
+@page "/statusrapporter2"
+@model Statusrapporter2Model
+@{
+    Layout = null;
+    ViewData["Title"] = "Statusrapport 2 – IS-302 Praksis";
+}
+
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"]</title>
+  <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__logo">
+        <a href="https://www.kristiansand.kommune.no" target="_blank" rel="noopener" title="Gå til Kristiansand kommune sin nettside">
+          <img src="/images/L_KRS_Forenklet_byvaapen.png" alt="Kristiansand kommune, forenklet digital logo" />
+        </a>
+        <a href="/" title="IS-302 Praksis Hjem">
+          <span>IS-302 Praksis</span>
+        </a>
+      </div>
+      <button class="navbar__toggle" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links">
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/gruppen">Gruppen</a></li>
+        <li><a href="/statusrapporter">Statusrapport 1</a></li>
+        <li><a href="/statusrapporter2">Statusrapport 2</a></li>
+        <li><a href="/dagbok">Dagbok</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-simple">
+    <div class="container">
+      <p class="hero__eyebrow">IS-302 · Fremdrift</p>
+      <h1 class="hero__title">Statusrapport 2</h1>
+      <p class="hero__subtitle">
+        Statusoppdateringer om prosjektfremdriften gjennom semesteret.
+      </p>
+    </div>
+  </header>
+
+  
+
+    <section class="section">
+    <div class="container">
+
+      <div class="card report-card">
+        <div class="report-card__date">11. oktober 2026 – Rapport #2</div>
+        <span class="badge badge--terracotta">Pågående arbeid</span>
+        <h2 class="report-card__title">ALISflyt - Praksis i Kristiansand kommune</h2>
+        <div class="report-card__body">
+          <p>
+            I denne perioden har vi videreutviklet løsningen for tilskuddsprosessen for ALIS-leger. Gjennom møter med enhetsleder og andre representanter fra kommunen har vi definert prosessene, beregningene av tilskudd og hvordan løsningen bør se ut. Gruppen har kartlagt den nåværende prosessen og identifisert steg som kan forenkles eller fjernes for å redusere unødvendig manuelt arbeid.
+          </p>
+          <p>
+            Basert på erfaringer fra andre prosjekter, spesielt et samarbeid med Kartverket/NRL og Norsk Luftambulanse, har vi laget separate oversiktssider for ALIS-leger, veiledere og koordinatorer for å skape forskjellige innfallsvinkler i løsningen. Vi har også utvidet søknadsskjemaet ved å implementere beregninger.
+          </p>
+          <p>
+            Gjennom dialog med enhetsleder har vi definert beregningsgrunnlaget i løsningen og implementert dette i prosjektet. Beregningsresultatene
+             vises sammen med søknadsopplysningene. I stedet for at enhetsleder manuelt skal beregne hvor mye hver ALIS-lege skal få, gjøres dette nå automatisk.
+          </p>
+
+          <div class="report-focus">
+            <div class="report-focus__label">Denne perioden har vi:</div>
+            <ul>
+              <li>Fortsatt utviklingen av arbeidsflyten.</li>
+              <li>Videreutviklet skjemaene for ALIS-søknader og veiledningsattester.</li>
+              <li>Forbedret oversikts- og detaljsidene for ALIS-lege, koordinator og veileder.</li>
+              <li>Implementert tilskuddsberegninger med satssett, visning av beregningsresultater i søknadene og samlet antall veiledningstimer.</li>
+            </ul>
+          </div>
+
+          <p>
+            Prosjektet har nå en mer utviklet prototype som støtter opprettelse, lagring, redigering og innsending av søknader. Det er også mulig for enhetsleder å sende en søknad tilbake til ALIS-legen dersom det er feil eller mangler i søknaden. Løsningen inneholder automatisk tilskuddsberegning og egne oversikter for ALIS-lege, veileder og enhetsleder/koordinator.
+          </p>
+          <div class="report-video">
+            <p class="report-gallery__intro">Video fra prosjektet:</p>
+            <video controls preload="metadata" class="report-video__player" aria-label="Video fra statusrapport 2">
+              <source src="/videos/statusrapport-2.mp4" type="video/mp4" />
+              Nettleseren din støtter ikke videoavspilling. Du kan laste ned videoen
+              <a href="/videos/statusrapport-2.mp4">her</a>.
+            </video>
+          </div>
+          <p class="report-gallery__intro">Smakebiter fra prototypen:</p>
+          <div class="report-gallery">
+            <figure class="report-gallery__item">
+              <img src="/images/DashboardALIS.png" alt="Prototypens oversiktsside for ALIS-lege" />
+              <figcaption><strong>ALIS-lege:</strong> Egen oversiktsside i løsningen.</figcaption>
+            </figure>
+            <figure class="report-gallery__item">
+              <img src="/images/Detaljerts%C3%B8knadforenkelalis.png" alt="Detaljert visning av en ALIS-søknad" />
+              <figcaption><strong>Søknadsdetaljer:</strong> Detaljert visning av søknaden for ALIS-legen.</figcaption>
+            </figure>
+            <figure class="report-gallery__item">
+              <img src="/images/Beregningsresultatbasertp%C3%A5kommunesamtale.png" alt="Beregningsresultat for ALIS-tilskudd" />
+              <figcaption><strong>Tilskuddsberegning:</strong> Beregningsresultat basert på grunnlaget avklart med kommunen.</figcaption>
+            </figure>
+            <figure class="report-gallery__item">
+              <img src="/images/DetaljertvisningforVeileder.png" alt="Prototypens detaljerte visning for veileder" />
+              <figcaption><strong>Veileder:</strong> Egen detaljvisning i løsningen.</figcaption>
+            </figure>
+            <figure class="report-gallery__item">
+              <img src="/images/DetaljertvisningforKoordinator.png" alt="Prototypens detaljerte visning for koordinator" />
+              <figcaption><strong>Koordinator:</strong> Egen detaljvisning i løsningen.</figcaption>
+            </figure>
+          </div>
+          <p class="report-card__next"><strong>Neste steg:</strong> Videreutvikle løsningen gjennom arbeidspakker vi har utarbeidet. Det vil handle om å 
+          fullføre påbegynte arbeidsoppgaver og forbedre den eksisterende løsningen. I tillegg vil vi legge planer for videre utvikling og forbedring av løsningen.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>IS-302 Praksisnettside &mdash; Kristiansand kommune &mdash; 2026</p>
+  </footer>
+
+  <script src="~/js/main.js" asp-append-version="true"></script>
+</body>
+</html>
