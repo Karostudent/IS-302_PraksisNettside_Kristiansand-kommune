@@ -1,21 +1,62 @@
 # IS-302 – Praksisnettside for Kristiansand kommune
 
-En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA). Studentene Karoline og Jabir gjennomfører praksis i Kristiansand kommune, Samfunnsmedisinsk enhet, der de jobber med effektivisering og digitalisering av saksbehandlingsprosessen for **ALIS-tilskudd (Allmennleger i spesialisering)** gjennom utvikling av en ny tilskuddsportal.
+Dette prosjektet er en praksisnettside for studentgruppen i emnet IS-302 ved
+Universitetet i Agder (UiA). Karoline Aas-Mehren og Jabir Gutale gjennomfører
+praksis i Kristiansand kommune, Samfunnsmedisinsk enhet.
 
-## Sider
+Nettsiden dokumenterer praksisperioden og prosjektarbeidet deres. Hovedtemaet
+er **ALISflyt**, en prototype for å effektivisere og digitalisere behandlingen
+av søknader om ALIS-tilskudd (tilskudd for allmennleger i spesialisering).
 
-| Side | Rute | Fil | Beskrivelse |
-|------|------|-----|-------------|
-| Hjem | `/` | `Pages/Index.cshtml` | Gruppepresentasjon, prosjektsammendrag og hurtigkoblinger |
-| Prosjektet | `/prosjekt` | `Pages/Prosjekt.cshtml` | Detaljert prosjektbeskrivelse for ALISflyt, metode, tidslinje og relevant prosjektmateriale |
-| Gruppen | `/gruppen` | `Pages/Gruppen.cshtml` | Utvidede studentprofiler for Karoline og Jabir |
-| Statusrapport 1 | `/statusrapporter` | `Pages/Statusrapporter.cshtml` | Første fremdriftsrapport |
-| Statusrapport 2 | `/statusrapporter2` | `Pages/Statusrapporter2.cshtml` | Andre fremdriftsrapport med prosjektvideo |
-| Dagbok | `/dagbok` | `Pages/Dagbok.cshtml` | Praksisdagbok med refleksjoner, notater og Supabase Auth |
+## Om prosjektet
 
-## Struktur
+Dagens prosess for ALIS-tilskudd er i stor grad manuell og innebærer blant
+annet skjemaer, regneark, dokumenthåndtering og oppfølging på tvers av flere
+roller. I praksisprosjektet kartlegger studentene dagens arbeidsprosess
+(«As-Is») og utvikler en mulig fremtidig arbeidsflyt («To-Be»).
 
-```
+ALISflyt er avgrenset til en prototype som demonstrerer sentrale deler av
+søknads- og behandlingsprosessen:
+
+- opprette, lagre, redigere og sende inn ALIS-søknader
+- vise søknadsstatus og detaljer
+- beregne tilskudd basert på avklarte satser og grunnlag
+- gi egne oversikter og arbeidsflater for ALIS-lege, veileder og koordinator
+- gjøre det mulig å returnere søknader som mangler opplysninger
+- samle relevant dokumentasjon og redusere manuelt dobbeltarbeid
+
+Prototypen er ikke et ferdig produksjonssystem. Målet er å undersøke behov,
+visualisere en forbedret arbeidsprosess og demonstrere muligheter for videre
+utvikling i samarbeid med oppdragsgiver.
+
+## Nettsidens innhold
+
+| Side | Rute | Innhold |
+| --- | --- | --- |
+| Hjem | `/` | Presentasjon av studentteamet, praksisoppdraget og hurtigkoblinger |
+| Prosjektet | `/prosjekt` | Bakgrunn, mål, metode, tidslinje og visuelt materiale fra ALISflyt |
+| Gruppen | `/gruppen` | Profiler og arbeidsområder for Karoline og Jabir |
+| Statusrapport 1 | `/statusrapporter` | Første statusrapport med tidlig prototype og prosessarbeid |
+| Statusrapport 2 | `/statusrapporter2` | Videreutviklet prototype, tilskuddsberegning, rollebaserte visninger og video |
+| Dagbok | `/dagbok` | Praksisdagbok med refleksjoner og innlegg fra praksisperioden |
+
+## Teknologier
+
+- ASP.NET Core Razor Pages på .NET 10
+- HTML5 og CSS3
+- Vanilla JavaScript
+- Supabase JavaScript-klient via CDN
+- Supabase Auth og PostgreSQL-tabellen `diary_entries` for dagboken
+- GitHub for versjonskontroll og automatisk deploy
+- Azure Web App for publisering via GitHub Actions
+
+Applikasjonen består hovedsakelig av Razor Pages og statiske filer. ASP.NET
+Core håndterer sidene og statiske ressurser, mens dagbokfunksjonaliteten
+kommuniserer direkte med Supabase fra nettleseren.
+
+## Prosjektstruktur
+
+```text
 /
 ├── Pages/
 │   ├── Dagbok.cshtml
@@ -25,72 +66,69 @@ En prosjektnettside for studentgruppen i IS-302 ved Universitetet i Agder (UiA).
 │   ├── Prosjekt.cshtml
 │   ├── Statusrapporter.cshtml
 │   └── Statusrapporter2.cshtml
+├── supabase/
+│   └── diary-auth-policies.sql
 ├── wwwroot/
-│   ├── css/
-│   │   └── style.css
+│   ├── css/style.css
 │   ├── images/
-│   │   ├── AS-IS (1).png
-│   │   ├── Jabir.jpeg
-│   │   ├── Karoline.jpeg
-│   │   ├── L_KRS_Forenklet_byvaapen.png
-│   │   ├── Ny soknad-fail.png
-│   │   ├── radhuskvartalet.jpg
-│   │   ├── Soknader.png
-│   │   ├── Tilskudd-excel.png
-│   │   └── TO-BE forelopigpng.png
-│   ├── videos/
-│   │   └── statusrapport-2.mp4
-│   └── js/
-│       ├── main.js
-│       └── supabase-config.js
+│   ├── js/main.js
+│   ├── js/supabase-config.js
+│   └── videos/statusrapport-2.mp4
+├── .github/workflows/
+│   └── main_praksis-i-kristiansand-kommune.yml
 ├── Program.cs
 ├── PraksisNettside.csproj
 └── README.md
 ```
 
-Prosjektsiden bruker `TO-BE forelopigpng.png` som fremhevet illustrasjon av ALISflyt. I tillegg vises fire relevante bilder i et 2x2-galleri: dagens Excel-baserte arbeid, As-Is-kartlegging, prototypen for ny søknad og oversikten over søknader. Bilder uten ferdig prosjektmateriale er ikke tatt med som placeholders.
-
-## Slik legger du til innhold
-
-### Ny statusrapport
-Åpne `Pages/Statusrapporter.cshtml` og legg til et nytt `<div class="card report-card">` øverst i containeren.
-
-### Video i statusrapport 2
-Legg videofilen med navnet `statusrapport-2.mp4` i `wwwroot/videos/`. Videoen vises automatisk i
-`Pages/Statusrapporter2.cshtml`. MP4-format med H.264-video og AAC-lyd anbefales for best støtte i nettlesere.
-
-### Nytt dagbokinnlegg
-Gå til Dagbok-siden (`/dagbok`), fyll ut skjemaet og trykk **Lagre innlegg**. Innlegg kan også redigeres og slettes fra dagboken.
-
-Dagbokinnlegg lagres i Supabase-tabellen `diary_entries` og er tilgjengelige på tvers av nettlesere og enheter. Tilkoblingen konfigureres i `wwwroot/js/supabase-config.js`.
-
-Alle kan lese dagbokinnlegg. Oppretting, redigering og sletting krever innlogging med den delte Supabase Auth-kontoen `dagbok@praksisnettside.no`.
-
-### Aktivere Dagbok-tilgang
-
-1. Opprett brukeren `dagbok@praksisnettside.no` under **Authentication → Users** i Supabase, med automatisk e-postbekreftelse aktivert.
-2. Kjør `supabase/diary-auth-policies.sql` i Supabase SQL Editor. Dette fjerner de midlertidige offentlige skrivepolicyene.
-3. Logg inn fra Dagbok-siden med passordet du valgte da brukeren ble opprettet.
-
 ## Lokal kjøring
 
-Kjør prosjektet med .NET CLI:
+Forutsetter installert .NET 10 SDK.
+
+Start applikasjonen med:
 
 ```bash
 dotnet run
 ```
 
-For automatisk oppdatering i nettleseren ved lagring (Hot Reload / Live Server-opplevelse):
+For Hot Reload under utvikling:
 
 ```bash
 dotnet watch
 ```
 
-Gå deretter til URL-en som vises i terminalen (f.eks. `http://localhost:5000` eller `https://localhost:7000`).
+Åpne deretter adressen som vises i terminalen, for eksempel
+`https://localhost:7000` eller `http://localhost:5000`.
 
-## Teknologier
+## Dagbok og Supabase
 
-- ASP.NET Core Razor Pages (.NET 10)
-- HTML5 / CSS3 (med sval nordisk/vinterlig Kristiansand-fargepalett)
-- Vanilla JavaScript
-- Supabase JavaScript-klient via CDN
+Alle besøkende kan lese dagbokinnlegg. Oppretting, redigering og sletting
+krever innlogging med den delte dagbokkontoen
+`dagbok@praksisnettside.no`. Den innloggede brukeren kan også endre
+gruppepassordet fra Dagbok-siden.
+
+For å sette opp dagboken:
+
+1. Opprett Supabase-tabellen `diary_entries` med feltene som brukes av
+   `wwwroot/js/main.js`: `id`, `entry_date`, `emoji`, `title`, `body`,
+   `created_at` og `updated_at`.
+2. Opprett brukeren `dagbok@praksisnettside.no` under **Authentication →
+   Users** i Supabase.
+3. Kontroller at prosjektets URL og publishable key er satt i
+   `wwwroot/js/supabase-config.js`.
+4. Kjør `supabase/diary-auth-policies.sql` i Supabase SQL Editor. Skriptet
+   aktiverer Row Level Security, åpner for lesing og begrenser skriving til
+   dagbokkontoen.
+5. Test innlogging, oppretting, redigering og sletting fra `/dagbok`.
+
+Ikke legg hemmelige servernøkler eller service role keys i
+`supabase-config.js`. Nøkler som brukes i nettleseren må være publishable
+eller anon-nøkler, og tilgangen skal sikres med Supabase RLS-policyene.
+
+## Deploy
+
+Ved push til `main` bygger GitHub Actions prosjektet med .NET 10, publiserer
+appen og distribuerer den til Azure Web App-en
+`Praksis-i-Kristiansand-kommune`. Workflowen ligger i
+`.github/workflows/main_praksis-i-kristiansand-kommune.yml` og kan også
+startes manuelt med `workflow_dispatch`.
