@@ -1,0 +1,85 @@
+@page "/refleksjon"
+@model RefleksjonModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Avsluttende Refleksjon – IS-302 Praksis";
+}
+
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"]</title>
+  <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__logo">
+        <a href="https://www.kristiansand.kommune.no" target="_blank" rel="noopener" title="Gå til Kristiansand kommune sin nettside">
+          <img src="/images/L_KRS_Forenklet_byvaapen.png" alt="Kristiansand kommune, forenklet digital logo" />
+        </a>
+        <a href="/" title="IS-302 Praksis Hjem">
+          <span>IS-302 Praksis</span>
+        </a>
+      </div>
+      <button class="navbar__toggle" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links">
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/prosjekt">Prosjektet</a></li>
+        <li><a href="/gruppen">Gruppen</a></li>
+        <li><a href="/statusrapporter">Statusrapport 1</a></li>
+        <li><a href="/statusrapporter2">Statusrapport 2</a></li>
+        <li><a href="/dagbok">Dagbok</a></li>
+        <li><a href="/refleksjon">Refleksjon</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-simple">
+    <div class="container">
+      <p class="hero__eyebrow">IS-302 · Praksisprosjekt</p>
+      <h1 class="hero__title">Avsluttende Refleksjon</h1>
+      <p class="hero__subtitle">
+        En oppsummering av prosjektet, læringsprosessen og veien videre.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="prose">
+        <p>
+          Vi har samarbeidet med Samfunnsmedisinsk enhet i Kristiansand kommune for å effektivisere behandlingen av tilskuddssøknader for ALIS-leger i kommunen. Behandlingen av tilskuddssøknader var preget av mye manuell håndtering og beregning, noe som skapte et stort arbeidspress for avdelingslederen.
+        </p>
+
+        <p>
+          Hensikten med løsningen vår var å automatisere mye av arbeidet hun måtte gjennom. Måten vi valgte å løse utfordringen på, var å utvikle en digital tilskuddsportal. Denne portalen skulle flytte mye av arbeidsbelastningen bort fra avdelingslederen og over på systemet. For eksempel skulle beregninger som tidligere måtte gjøres manuelt, bli en automatisk prosess. Dette er en problemstilling som ikke bare gjelder Kristiansand kommune, men også andre kommuner i landet. Hvis vi klarer å ferdigstille løsningen, kan den potensielt bli tatt i bruk på nasjonalt nivå.
+        </p>
+
+        <p>
+          Vi startet arbeidet med å bli kjent med oppdragsgiver og finne ut hva vi kunne gjøre for å hjelpe avdelingen. I september begynte vi med datainnsamling for å få en bedre forståelse av problemstillingen og analysere mulige forbedringsområder. I oktober startet vi utviklingen av prototypen, som vi har jobbet med frem til nå.
+        </p>
+
+        <p>
+          Selv om mye arbeid har blitt gjort hittil, er vi fortsatt langt fra ferdige. «Scope creep» er noe vi har prøvd å unngå gjennom hele utviklingen. Det er mange funksjoner vi har lyst til å legge til, men vi må være realistiske med tanke på tiden vi har tilgjengelig. Vi ønsker heller ikke å levere et produkt vi ikke er fornøyde med. Derfor har vi måttet være forsiktige med hva vi legger til, prioritere å ferdigstille det vi allerede har startet på, og først deretter vurdere nye funksjoner.
+        </p>
+
+        <p>
+          Flere av kjernefunksjonene er delvis ferdigstilt, men både vi og kommunen ønsker at prosjektet faktisk skal bli tatt i bruk. På grunn av dette har kommunen tilbudt oss deltidsstillinger som konsulenter ut våren, slik at vi kan fortsette utviklingen etter praksisperioden. Det er fortsatt mye arbeid som gjenstår, og vi vet at veien videre blir krevende.           Likevel er håpet vårt at vi klarer å ferdigstille løsningen og at den etter hvert kan tas i bruk av agder-fylke.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>IS-302 Praksisnettside &mdash; <a href="https://www.kristiansand.kommune.no" target="_blank" rel="noopener">Kristiansand kommune</a> &mdash; 2026</p>
+  </footer>
+
+  <script src="~/js/main.js" asp-append-version="true"></script>
+</body>
+</html>
